@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mechama
+    username: mechama_user
+    password: mechama_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+jwt:
+  # IMPORTANTE: Substituir por uma chave segura em produção (mínimo 32 caracteres)
+  secret: "mechama_chave_secreta_super_segura_para_jwt_2024!"
+  expirationMs: 2592000000 # 30 dias em ms
