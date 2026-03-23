@@ -40,6 +40,8 @@ public class SecurityConfig {
                 .requestMatchers("GET", "/api/services/*").permitAll()
                 // Busca e descoberta — pública (T4)
                 .requestMatchers("GET", "/api/search").permitAll()
+                // Agenda do prestador — horários disponíveis são públicos (T5)
+                .requestMatchers("GET", "/api/schedule/provider/*").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
